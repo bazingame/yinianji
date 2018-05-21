@@ -15,6 +15,12 @@ class CreateWorkTable extends Migration
     {
         Schema::create('work', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('designer_id')->comment('设计者id');
+            $table->string('images')->comment('图片地址');
+            $table->string('views')->comment('浏览量');
+            $table->string('demand_id')->comment('需求id');
+            $table->string('time')->comment('周期');
+            $table->string('type')->comment('类型');
             $table->timestamps();
         });
     }

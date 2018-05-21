@@ -15,6 +15,12 @@ class CreatePostTable extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('designer_id')->comment('设计师id');
+            $table->dateTime('public_time')->comment('发布时间');
+            $table->string('content')->comment('内容');
+            $table->string('img_url')->comment('图片地址');
+            $table->integer('like_num')->comment('点赞数量');
+            $table->integer('unlick_num')->comment('踩数量');
             $table->timestamps();
         });
     }

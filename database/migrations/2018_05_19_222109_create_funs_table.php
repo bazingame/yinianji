@@ -15,6 +15,8 @@ class CreateFunsTable extends Migration
     {
         Schema::create('funs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('designer_id')->comment('设计师id');
+            $table->string('user_id')->comment('用户id');
             $table->timestamps();
         });
     }

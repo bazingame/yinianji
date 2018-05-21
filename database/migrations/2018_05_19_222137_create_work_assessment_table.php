@@ -15,6 +15,10 @@ class CreateWorkAssessmentTable extends Migration
     {
         Schema::create('work_assessment', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('work_id')->comment('作品id');
+            $table->integer('user_id')->comment('用户id');
+            $table->string('content')->comment('内容');
+            $table->dateTime('time')->comment('时间');
             $table->timestamps();
         });
     }
