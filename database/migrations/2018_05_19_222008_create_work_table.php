@@ -17,10 +17,16 @@ class CreateWorkTable extends Migration
             $table->increments('id');
             $table->string('designer_id')->comment('设计者id');
             $table->string('images')->comment('图片地址');
-            $table->string('views')->comment('浏览量');
+            $table->string('name')->comment('作品名称');
+            $table->integer('views')->comment('浏览量');
+            $table->integer('like')->comment('点赞数量');
+            $table->string('description')->comment('描述');
             $table->string('demand_id')->comment('需求id');
-            $table->string('time')->comment('周期');
-            $table->string('type')->comment('类型');
+            $table->string('time')->comment('周期/day');
+            $table->integer('service_id')->comment('服务大类id');
+            $table->string('service')->comment('服务大类');
+            $table->string('service_detail')->comment('服务项目');
+            $table->integer('service_detail_id')->comment('服务项目id');
             $table->timestamps();
         });
     }

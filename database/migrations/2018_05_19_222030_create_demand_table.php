@@ -18,7 +18,9 @@ class CreateDemandTable extends Migration
             $table->string('name')->comment('需求名称');
             $table->string('time')->comment('周期');
             $table->string('money')->comment('赏金');
-            $table->string('type')->comment('类型');
+            $table->integer('service_id')->comment('服务大类id');
+            $table->string('service')->comment('服务大类');
+            $table->integer('service_detail_id')->comment('服务项目id');
             $table->string('service_detail')->comment('服务项目');
             $table->string('description')->comment('描述');
             $table->string('status')->comment('状态');
