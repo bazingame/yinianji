@@ -22,6 +22,9 @@ class Controller extends BaseController
             '2'=>'Get designer detail fail',
             '3'=>'Invalid order',
             '4'=>'Get work detail fail',
+            '5'=>'Get demand detail fail',
+            '6'=>'Get user detail fail',
+            '7'=>'Get post detail fail',
         );
         return $codeArr[$errCode];
     }

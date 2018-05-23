@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
             DesignerTableSeeder::class,
             WorkTableSeeder::class,
             DemandTableSeeder::class,
+            WorkAssessmentSeeder::class,
+            UserTableSeeder::class,
+            PostTableSeeder::class,
             ]);
     }
 }

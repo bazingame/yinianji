@@ -76,4 +76,15 @@ Route::group(['prefix'=>'demand'],function (){
     Route::get('/status/{status}','DemandController@getDemandByStatus');
 });
 
+//用户相关
+Route::group(['prefix'=>'user',],function (){
+    //获取所有用户
+    Route::get('/all','Usercontroller@getAllUser');
+    //按照id获取用户信息
+    Route::get('/{id}','Usercontroller@getUserById');
+});
 
+//圈子相关
+Route::group(['prefix'=>'post',],function (){
+    Route::get('/all','PostController@getAllPost');
+});

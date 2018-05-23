@@ -14,7 +14,6 @@ class ServiceController extends Controller
     }
     public function detailAll(){
         $service_detail = Service_Detail::all('id','service_id','name');
-//        echo json_encode($service_detail,JSON_UNESCAPED_UNICODE);
         self::response(0,$service_detail);
     }
     public function detail(Request $request){

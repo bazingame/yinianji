@@ -20,7 +20,7 @@ class CreatePostTable extends Migration
             $table->string('content')->comment('内容');
             $table->string('img_url')->comment('图片地址');
             $table->integer('like_num')->comment('点赞数量');
-            $table->integer('unlick_num')->comment('踩数量');
+            $table->integer('unlike_num')->comment('踩数量');
             $table->timestamps();
         });
     }

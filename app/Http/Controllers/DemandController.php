@@ -10,14 +10,14 @@ class DemandController extends Controller
     public function getAllDemand(Request $request)
     {
         $orderBy = $request->order;
-        if (in_array($orderBy, array('time', 'like', 'view', 'master'))) {
+        if (in_array($orderBy, array('money', 'public_time', 'status'))) {
             self::response(3, null);
         }
 
         if ($demand = Demand::all()->orderBy($orderBy, 'desc')) {
             self::response(0, $demand);
         } else {
-            self::response(4, null);
+            self::response(5, null);
         }
     }
 
@@ -27,7 +27,7 @@ class DemandController extends Controller
         if ($demand = Demand::where('id', '=', $id)->first()) {
             self::response(0, $demand);
         } else {
-            self::response(4, null);
+            self::response(5, null);
         }
     }
 
@@ -37,7 +37,7 @@ class DemandController extends Controller
         if ($demand = Demand::where('designer_id', '=', $id)->get()) {
             self::response(0, $demand);
         } else {
-            self::response(4, null);
+            self::response(5, null);
         }
     }
 
@@ -47,7 +47,7 @@ class DemandController extends Controller
         if ($demand = Demand::where('service_id', '=', $id)->get()) {
             self::response(0, $demand);
         } else {
-            self::response(4, null);
+            self::response(5, null);
         }
     }
 
@@ -57,7 +57,7 @@ class DemandController extends Controller
         if ($demand = Demand::where('service_detail_id', '=', $id)->get()) {
             self::response(0, $demand);
         } else {
-            self::response(4, null);
+            self::response(5, null);
         }
     }
 
@@ -67,7 +67,7 @@ class DemandController extends Controller
         if ($demand = Demand::where('name', 'like', '%'.$param.'%')->orWhere('description','like','%'.$param.'%')->get()) {
             self::response(0, $demand);
         } else {
-            self::response(4, null);
+            self::response(5, null);
         }
     }
 
@@ -76,7 +76,7 @@ class DemandController extends Controller
         if($demand = Demand::where('status', '=', $status)->get()){
             self::response(0, $demand);
         } else {
-            self::response(4, null);
+            self::response(5, null);
         }
     }
 }

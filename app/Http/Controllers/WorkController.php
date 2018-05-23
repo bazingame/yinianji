@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Work;
+use App\Model\Work_Assessment;
 use Illuminate\Http\Request;
 
 class WorkController extends Controller
@@ -58,6 +59,15 @@ class WorkController extends Controller
         if ($work = Work::where('name', 'like', '%'.$param.'%')->orWhere('description','like','%'.$param.'%')->get()) {
             self::response(0, $work);
         } else {
+            self::response(4, null);
+        }
+    }
+
+    public function getReply(Request $request){
+        $id = $request->id;
+        if($reply = Work_Assessment::where('work_id','=',$id)->get()){
+            self::response(0,$reply);
+        }else{
             self::response(4, null);
         }
     }
